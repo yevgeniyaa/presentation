@@ -1,2 +1,1 @@
-# presentation
-https://yevgeniyaa.github.io/presentation
+# Presentation "Introduction to TypeScript"
