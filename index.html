@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Introduction to TypeScript</title>
+
+    <meta name="description" content="Presentation on the theme 'TypeScript' as part of RSS education">
+    <meta name="author" content="Yevgeniya Anossova">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/league.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css">
+
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <div class="slides">
+        <section>
+            <h1>TypeScript</h1>
+            <h3>Introduction</h3>
+            <p>
+                <small>Presentation was created by Yevgeniya Anossova</small>
+            </p>
+        </section>
+
+        <section>
+            <section>
+                <h2>What is TypeScript?</h2>
+                <p>
+                <ul>
+                    <li>Typed superset of <span class="imp">JavaScript</span>.</li>
+                    <li>An <span class="imp">open-source</span> programming language.</li>
+                    <li>Maintained by <span class="imp">Microsoft</span> since they created it in 2012.</li>
+                    <li><span class="imp">Transcompiles</span> to JavaScript.</li>
+                    <li>May be used for both: <span class="imp">client-side</span> and <span
+                            class="imp">server-side</span>.
+                    </li>
+                </ul>
+                </p>
+            </section>
+            <section>
+                <h2>History</h2>
+                <p>
+                <ul>
+                    <li>TypeScript<span class="imp"> 0.8</span>
+                        <br>
+                        <small>October 2012, after two years of internal development at Microsoft.</small>
+                    </li>
+                    <li>TypeScript<span class="imp"> 1.0</span>
+                        <br>
+                        <small>In 2014 on Microsoft's Build developer conference.</small>
+                    </li>
+                    <li>TypeScript<span class="imp"> 2.0</span>
+                        <br>
+                        <small>22 September 2016.</small>
+                    </li>
+                    <li>TypeScript<span class="imp"> 3.0</span>
+                        <br>
+                        <small>30 July 2018.</small>
+                    </li>
+                </ul>
+                </p>
+            </section>
+            <section>
+                <h2>Compatibility with JS</h2>
+                <p>
+                    TypeScript is a strict superset of <span class="imp">ECMAScript 2015</span>.
+                    <br>
+                    ECMAScript 2015 is a superset of <span class="imp">ECMAScript 5</span> (JavaScript).
+                    <br>
+                    <br>
+                    As such, a JS program is also a valid TS program.
+                    <br>
+                    A TS program can seamlessly consume JS.
+                </p>
+            </section>
+            <section>
+                <h2>The Benefits of Using TS</h2>
+                <p>
+                <ul>
+                    <li><span class="imp">Static typing</span>
+                        <br>=> Code is more predictable, easier to debug
+                    </li>
+                    <br>
+                    <li><span class="imp">Modules, namespaces and strong OOP support</span>
+                        <br>=> Easier to organize the code
+                    </li>
+                    <br>
+                    <li><span class="imp">Compilation step to JS</span>
+                        <br>=> Early errors catching
+                    </li>
+                </ul>
+                </p>
+            </section>
+            <section>
+                <h2>TS popularity</h2>
+                <a href="https://www.google.com/trends/explore#q=TypeScript">
+                    <img src="./lib/css/popularity-trend.png" alt="TypeScript Popularity Google Trend">
+                </a>
+                <small>Recent rise of TypeScript's popularity, data from Google Trends</small>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Development tools</h2>
+                <br>
+                <ul>
+                    <li>Text Editors With TS Support</li>
+                    <li>Compiler</li>
+                    <li>Integration with build automation tools</li>
+                    <li>Linting tools</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Text Editors</h2>
+                <p>
+                <ul>
+                    <li>Was originally supported only in <span class="imp">Microsoft's Visual Studio</span> platform.
+                    </li>
+                    <li><span class="imp">Visual Studio Code</span> - Microsoft's other, lightweight open-source code
+                        editor.
+                    </li>
+                    <li>Official Free Plugin for <span class="imp">Sublime Text</span>.</li>
+                    <li><span class="imp">WebStorm</span> comes with built in support.</li>
+                    <li>More including <span class="imp">Vim</span>, <span class="imp">Atom</span>, <span class="imp">Emacs</span>
+                        and others.
+                    </li>
+                </ul>
+                </p>
+            </section>
+            <section>
+                <h2>Compiler</h2>
+                <p>
+                    The TypeScript compiler, named <span class="imp">tsc</span>, is written in TS.
+                    <br>
+                    <br>
+                    Can then be executed in any JS engine.
+                    <br>
+                    <br>
+                    The compiler package comes bundled with a script host that can execute the compiler.
+                    <br>
+                    <br>
+                    It is also available as a Node.js package that uses Node.js as a host.
+                </p>
+            </section>
+            <section>
+                <h2>Build automation tools</h2>
+                <p>
+                    <span class="imp">Grunt</span> (grunt-ts)
+                    <br>
+                    <br>
+                    <span class="imp">Apache Maven</span> (TypeScript Maven Plugin)
+                    <br>
+                    <br>
+                    <span class="imp">Gulp</span> (gulp-typescript)
+                    <br>
+                    <br>
+                    <span class="imp">Gradle</span> (TypeScript Gradle Plugin)
+                </p>
+            </section>
+            <section>
+                <h2>Linting tools</h2>
+                <p>
+                    <br>
+                    <br>
+                    In early 2019, the by joint effort of the TSLint, ESLint and TypeScript teams <span class="imp">typescript-eslint</span>
+                    package was created.
+                </p>
+            </section>
+        </section>
+        <section>
+            <h2>Installing TS</h2>
+            <div style="text-align: left;">
+                <p>
+                    Open the terminal and type
+                <pre><code>npm install -g typescript</code></pre>
+                Verify it by running the command
+                <pre><code>tsc -v</code></pre>
+                which will display the version of the TS installed</p>
+            </div>
+        </section>
+        <section>
+            <section>
+                <h2>Writing some code</h2>
+                <p>
+                    1. Open <span class="imp">IDE/Text Editor</span>
+                    <br>
+                    2. Create a <span class="imp">file</span> <code>main.ts</code>
+                    <br>
+                    3. Write a few lines of <span class="imp">code</span>:
+                <pre><code>let a = 5;
+let b = 5;
+let c = a + b;
+console.log(c);</code></pre>
+                4. The next step is to <span class="imp">compile</span> our TS into JS
+                </p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Compiling</h2>
+                <p>
+                    The compilation process can be done in a number of different ways:
+                <ul>
+                    <li>In the <span class="imp">terminal</span> using <code>tsc</code>.</li>
+                    <li>Directly in <span class="imp">IDEs</span> and <span class="imp">text editors</span>.</li>
+                    <li>Using <span class="imp">automated task runners</span> such as <code>gulp</code>.</li>
+                </ul>
+                </p>
+            </section>
+            <section>
+                <h2>Compilation commands</h2>
+                <p>
+                    Command to generate <code>filename.js</code>
+                <pre><code>tsc filename.ts</code></pre>
+                To compile multiple files at once:
+                <pre><code>tsc main.ts worker.ts</code></pre>
+                <pre><code>tsc *.ts</code></pre>
+                </p>
+            </section>
+            <section>
+                <h2>Let's compile</h2>
+                <p>
+                    <br>
+                    In the terminal at the file location run the command:
+                <pre><code>tsc main.ts</code></pre>
+                </p>
+            </section>
+
+            <section>
+                <h2>Advanced compiling</h2>
+                <p>
+                    The <code>--watch</code> option can be used to automatically compile a TS file when
+                    changes are made:
+                <pre><code>tsc main.ts –watch</code></pre>
+                <br>
+                Also a <code>tsconfig.json</code> file can be created to hold various build settings.
+                </p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Data types</h2>
+                <p>
+                    <br>
+                <ul>
+                    <li>Typing ensures <span class="imp">reliability</span> and <span class="imp">scalability</span>.
+                    </li>
+                    <li>Helps in hunting down <span class="imp">bugs</span> and <span class="imp">errors</span>.</li>
+                    <li>Helps to properly <span class="imp">document</span> our code.</li>
+                </ul>
+                </p>
+            </section>
+            <section>
+                <h2>Data types example</h2>
+                <p>
+                    TS:
+                <pre><code>let burger: string = 'hamburger';
+let calories: number = 300;
+function speak(food: string, energy: number): void {
+    console.log(`Our ${food} has ${energy} calories.`);
+}
+speak(burger, calories);</code></pre>
+                JS:
+                <pre><code>let burger = 'hamburger';
+let calories = 300;
+function speak(food, energy) {
+    console.log(`Our ${food} has ${energy} calories.`);
+}
+speak(burger, calories);</code></pre>
+                </p>
+            </section>
+            <section>
+                <h2>Data types</h2>
+                <br>
+                <ul>
+                    <li><span class="imp">Any</span> type</li>
+                    <li><span class="imp">Built-in</span> types</li>
+                    <li><span class="imp">User-defined</span> types</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Any type</h2>
+                <p>
+                    The <code>any</code> data type is the superset of all the data types in TypeScript. Giving any
+                    variable the type of <code>any</code> is equivalent to opting out of type checking for a variable.
+                <pre><code>let myVariable: any = 'This is a string';</code></pre>
+                </p>
+            </section>
+            <section>
+                <h2>Built-in types</h2>
+                <p>
+                    These are the types which are built in TypeScript. They include <code>number</code>,
+                    <code>string</code>, <code>boolean</code>, <code>void</code>, <code>null</code> and
+                    <code>undefined</code>.
+                <pre><code>let num: number = 5;
+let name: string = 'Alex';
+let isPresent: boolean = true;</code></pre>
+                </p>
+            </section>
+            <section>
+                <h2>User-defined types</h2>
+                <p>
+                    The user-defined types include <code>enum</code>, <code>class</code>, <code>interface</code>, <code>array</code>
+                    and <code>tuple</code>.
+                </p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>OOP</h2>
+                <p>
+                    <br>
+                    TypeScript supports all the features of object-oriented programming, such as <span class="imp">classes</span>
+                    and <span class="imp">interfaces</span>.
+                </p>
+            </section>
+            <section>
+                <h2>Class</h2>
+                <p>
+                    Class - the template of objects.
+                    <br>
+                    The <code>class</code> keyword can be used to declare one:
+                <pre><code>class Menu {
+  items: Array&lt;string&gt;
+  pages: number;
+
+  constructor(itemList: Array&lt;string&gt, totalPages: number) {
+    this.items = itemList;
+    this.pages = totalPages;
+  }
+
+  list(): void {
+    console.log(`Our menu for today: ${this.items.join(', ')}`);
+  }
+}
+const sundayMenu = new Menu(["pancakes", "waffles", "juice"], 1);
+sundayMenu.list();</code></pre>
+                </p>
+            </section>
+            <section>
+                <h2>Interface</h2>
+                <p>
+                    An interface - a syntactical contract to which an object should conform.
+                    <br>
+                    To create an interface, we use the keyword <code>interface</code>:
+                <pre><code>interface Food {
+  name: string;
+  calories: number;
+}
+
+function speak(food: Food): void {
+  console.log(`Our ${food.name} has ${food.calories} calories.`);
+}
+
+const iceCream: Food = {
+  name: "ice cream",
+  calories: 200
+}
+speak(iceCream);</code></pre>
+                </p>
+            </section>
+        </section>
+        <section>
+            <h2>Conclusion</h2>
+            <p>
+                TypeScript is gaining a lot of momentum in the world of web development. TypeScript is definitely
+                something any front-end
+                developer should be aware of.
+                <img src="./lib/css/bg.png" alt="TS Background">
+            </p>
+        </section>
+        <section>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h2>Thank you!</h2>
+        </section>
+    </div>
+
+</div>
+
+<script src="js/reveal.js"></script>
+
+<script>
+
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: false,
+        // left: true,
+        hash: true,
+
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {
+                src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            {
+                src: 'plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            {src: 'plugin/highlight/highlight.js', async: true},
+            {src: 'plugin/search/search.js', async: true},
+            {src: 'plugin/zoom-js/zoom.js', async: true},
+            {src: 'plugin/notes/notes.js', async: true}
+        ]
+    });
+
+</script>
+
+</body>
+</html>
